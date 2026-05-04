@@ -1,12 +1,15 @@
-let countVowels=function(str){
-    let count=0
-    for(let char of str.toLowerCase()){
-        if("aeiou".includes(char)){
-            count++
+function isPrime(num){
+    if(num<=1){
+        return false;
+    }
+    for(let i=2;i<=Math.sqrt(num);i++){
+        if(num%i===0){
+            return false;
         }
     }
-    return count
+    return true;
 }
 
-console.log(countVowels("Hello World")) 
-console.log(countVowels("JavaScript"))
+console.log(isPrime(7)); // true
+console.log(isPrime(10)); // false
+console.log(isPrime(17)); // true
